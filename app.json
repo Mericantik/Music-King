@@ -5,35 +5,71 @@
   "repository": "https://github.com/apisuserbot/Music-King",
   "stack": "container",
   "env": {
-    "SESSION_NAME": {
-      "description": "String Session bisa cari di telegram dengan username @StringSessionGeneratorRobot",
-      "required": true
+    "python3",
+    "telegram",
+    "bot",
+    "VenomX",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "MONGO_DB_URI": {
+        "description": "Get a mongodb url from https://cloud.mongodb.com.",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "The user id of user whom you would like to add as OWNER.",
+        "value": "6194877007",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "A Pyrogram v2 String Session from @Venom_string_robot on Telegram.",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "Your Heroku account's API key",
+        "value": "",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Your heroku app name",
+        "value": "",
+        "required": false
+      },
+      "LOGGER_ID": {
+        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
+        "value": "",
+        "required": true
+      }
     },
-    "BOT_TOKEN": {
-      "description": "Cari bot token yang udah lu buat tadi di @BotFather",
-      "required": true
-    },
-    "BOT_NAME": {
-      "description": "Nama bot music lu.",
-      "required": false,
-      "value": ""
-    },
-    "API_ID": {
-      "description": "App ID cari di web my.telegram.org/apps",
-      "required": true
-    },
-    "API_HASH": {
-      "description": "App hash cari di web my.telegram.org/apps",
-      "required": true
-    },
-    "SUDO_USERS": {
-      "description": "ID admin telegram lu (dengan spasi).",
-      "required": true
-    },
-    "DURATION_LIMIT": {
-      "description": "Max audio duration limit for downloads (minutes).",
-      "required": true,
-      "value": "10"
-    }
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
   }
-}
